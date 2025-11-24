@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Group Planner
 
-## Getting Started
+A collaborative planning dashboard for friend groups built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS + shadcn/ui components
+- **Icons:** Lucide React
+- **State:** Mock data (frontend-only MVP)
+
+## 📁 Project Structure
+
+```
+group-planner/
+├── src/
+│   ├── app/
+│   │   ├── (auth)/
+│   │   │   ├── login/page.tsx
+│   │   │   └── signup/page.tsx
+│   │   ├── (dashboard)/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx              # Overview
+│   │   │   ├── events/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── [id]/page.tsx
+│   │   │   ├── tasks/page.tsx
+│   │   │   └── members/page.tsx
+│   │   ├── globals.css
+│   │   └── layout.tsx
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Sidebar.tsx           # Desktop navigation
+│   │   │   ├── Topbar.tsx            # Top bar with event switcher
+│   │   │   └── MobileNav.tsx         # Mobile bottom nav
+│   │   ├── events/
+│   │   │   └── EventCard.tsx
+│   │   ├── tasks/
+│   │   │   ├── TaskBoard.tsx         # Kanban board
+│   │   │   └── TaskCard.tsx
+│   │   └── ui/                       # shadcn/ui components
+│   ├── lib/
+│   │   ├── mockData.ts               # Mock events & tasks
+│   │   └── utils.ts                  # cn() helper
+│   └── types/
+│       └── index.ts                  # TypeScript types
+├── components.json
+├── tailwind.config.ts
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ✅ **Responsive Design:** Desktop sidebar + mobile bottom navigation
+- ✅ **Dashboard Overview:** Event info, task progress, members at a glance
+- ✅ **Event Management:** View and switch between multiple events
+- ✅ **Task Board:** Kanban-style board (To do, Doing, Done)
+- ✅ **Member Management:** See all participants
+- ✅ **Auth Pages:** Login & signup UI (no backend yet)
+- ✅ **Dark Mode Ready:** Tailwind CSS custom properties
+- ✅ **Type-Safe:** Full TypeScript coverage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚦 Getting Started
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Run development server
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Build for production
+npm run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start production server
+npm start
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 Routes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/` - Overview dashboard
+- `/events` - List of all events
+- `/events/[id]` - Single event view
+- `/tasks` - Task board (Kanban)
+- `/members` - Member list
+- `/login` - Login page
+- `/signup` - Signup page
+
+## 🔮 Next Steps
+
+This is a frontend-only MVP. Future enhancements:
+
+- Backend API integration
+- Database (PostgreSQL/MongoDB)
+- Authentication (NextAuth.js)
+- Real-time updates (WebSockets)
+- Event creation & editing
+- Task assignment & updates
+- Member invitations
+- File uploads
+- Calendar integration
+
+## 📝 Notes
+
+- All data is currently mocked in `src/lib/mockData.ts`
+- No backend or API routes yet
+- Components use shadcn/ui for consistent styling
+- Mobile-first responsive design
+
+---
+
+Built with ❤️ using Next.js 15
